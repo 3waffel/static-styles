@@ -1,0 +1,172 @@
+:root {
+    --img-width: 100vw;
+    --img-height: 200vh;
+    --main: url(https://i.imgur.com/2QCpe3R.jpg);
+    --reki: url(https://i.imgur.com/SznxLER.jpg);
+    --rakka: url(http://i.imgur.com/vm6qOMh.jpg);
+    --lain: url(https://i.imgur.com/44stJQB.jpg);
+    --ran: url(https://i.imgur.com/rQq5zoB.jpg);
+    --rei: url(http://i.imgur.com/g6RYLPQ.jpg);
+    --despera: url(http://i.imgur.com/tn2CCtb.jpg);
+}
+
+body {
+    background: var(--main); /*MAIN BACKGROUND IMAGE*/
+    background-size: cover;
+    background-position: right bottom;
+    background-color: black;
+    background-attachment: fixed;
+    font-weight: light;
+    transform-style: preserve-3d; /*enable 3d transforms for parallax effect*/
+
+    cursor: url(http://i.imgur.com/YxTfKol.png) 9 7, auto; /*green cursor*/
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #f9f8d8;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover,
+a:visited:hover {
+    cursor: url(http://i.imgur.com/ysmichE.png) 9 7, auto; /*red cursor*/
+    color: #f9f8d8;
+    text-decoration: underline;
+}
+
+.toot.expanded,
+.profile {
+    background-color: rgba(38, 40, 43, 0.829);
+}
+
+.toot.expanded:nth-of-type(1)::after {
+    /*top image*/
+    display: block;
+    width: var(--img-width);
+    position: fixed;
+    top: 100vh;
+    left: 0;
+    content: "";
+    background-image: var(--reki); /* Reki */
+    background-position: right top !important;
+    background-size: cover;
+
+    -webkit-transform-style: preserve-3d;
+    /* -webkit-transform: translateZ(-3px) scale(4); */
+
+    z-index: -500 !important;
+    transform-style: preserve-3d;
+    min-height: var(--img-height);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.toot.expanded:nth-of-type(2)::after {
+    /*second image*/
+    display: block;
+    width: var(--img-width);
+    position: fixed;
+    top: 250vh;
+    left: 0;
+    content: "";
+    background-image: var(--rakka); /* Rakka */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* transform: translateZ(-2px) scale(3); */
+    z-index: -499 !important;
+    transform-style: preserve-3d;
+    min-height: var(--img-height);
+    overflow: hidden;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    pointer-events: none;
+}
+
+.toot.expanded:nth-of-type(3)::after {
+    /*third image*/
+    display: block;
+    width: var(--img-width);
+    position: fixed;
+    top: 400vh;
+    left: 0;
+    content: "";
+    background-image: var(--lain); /* Lain */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    /* transform: translateZ(-3px) scale(4); */
+    z-index: -500 !important;
+    transform-style: preserve-3d;
+    min-height: var(--img-height);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.toot.expanded:nth-of-type(4)::after {
+    /*fourth image*/
+    display: block;
+    width: var(--img-width);
+    position: fixed;
+    top: 550vh;
+    left: 0;
+    content: "";
+    background-image: var(--ran); /* Ran */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* transform: translateZ(-1px) scale(2); */
+    z-index: -498 !important;
+    transform-style: preserve-3d;
+    min-height: var(--img-height);
+    overflow: hidden;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    pointer-events: none;
+}
+
+.toot.expanded:nth-of-type(5)::after {
+    /*fifth image*/
+    display: block;
+    width: var(--img-width);
+    position: fixed;
+    top: 700vh;
+    left: 0;
+    content: "";
+    background-image: var(--rei); /* Rei */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    /* transform: translateZ(-3px) scale(4); */
+    z-index: -499 !important;
+    transform-style: preserve-3d;
+
+    -webkit-transform-style: preserve-3d;
+    /* -webkit-transform: translateZ(-3px) scale(4); */
+
+    min-height: var(--img-height);
+    margin-bottom: 0;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    pointer-events: none;
+}
+
+footer::before {
+    /* bottom image*/
+    display: block;
+    width: var(--img-width);
+    position: relative;
+    left: 0;
+    top: 0;
+    content: "";
+    background-image: var(--despera); /* Despera */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    z-index: -497 !important;
+    min-height: var(--img-height);
+    /* transform: translateZ(-0.5px) translateY(-225vh) scale(1.5); */
+    /*transform: translateY(-200vh);*/
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.75);
+    overflow: none;
+}
